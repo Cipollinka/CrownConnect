@@ -56,11 +56,10 @@ export default function MeetingSuccessScreen({ route, navigation }) {
 
     const handleAddToCalendar = useCallback(async () => {
         try {
-            const status = await RNCalendarEvents.checkPermissions();
+            const status = await RNCalendarEvents.authorizeEventStore();
             if (status !== 'authorized') {
                 console.log('Calendar access not granted');
-                await  RNCalendarEvents.requestPermissions();
-                return handleAddToCalendar();
+                return;
             }
 
             const [startTimeStr, endTimeStr] = meeting.time.split(' - ');
@@ -135,14 +134,14 @@ const styles = StyleSheet.create({
         bottom: 0,
         left: 0,
         right: 0,
-        backgroundColor: '#181818',
+        backgroundColor: '#131313',
         padding: 16,
         justifyContent: 'flex-end',
         paddingBottom: 50,
     },
     addButton: {
         height: 48,
-        borderRadius: 12,
+        borderRadius: 14,
         backgroundColor: '#FFFFFF',
         justifyContent: 'center',
         alignItems: 'center',
@@ -156,7 +155,7 @@ const styles = StyleSheet.create({
     },
     closeButton: {
         height: 48,
-        borderRadius: 12,
+        borderRadius: 14,
         borderWidth: 1,
         borderColor: '#FFFFFF',
         backgroundColor: 'transparent',

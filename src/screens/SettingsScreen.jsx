@@ -6,7 +6,7 @@ import {
     TouchableOpacity,
     ScrollView,
     Text,
-    Image, Linking,
+    Image,
 } from 'react-native';
 
 import NotificationsSVG from '../assets/settings/NotificationsSVG';
@@ -27,7 +27,7 @@ export default function SettingsScreen() {
             <Header title="Settings" />
 
             <ScrollView contentContainerStyle={styles.scrollContent}>
-                <TouchableOpacity style={styles.card} onPress={() => { Linking.openURL('https://www.termsfeed.com/live/3ebfa683-48a8-4f39-960a-478055183dc6')}}>
+                <TouchableOpacity style={styles.card} onPress={() => { }}>
                     <View style={styles.cardLeft}>
                         <TermsSVG />
                         <Text style={styles.cardTitle}>Terms of Use</Text>
@@ -35,7 +35,7 @@ export default function SettingsScreen() {
                     <ArrowRightSVG />
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.card} onPress={() => { Linking.openURL('https://www.termsfeed.com/live/3ebfa683-48a8-4f39-960a-478055183dc6')}}>
+                <TouchableOpacity style={styles.card} onPress={() => { }}>
                     <View style={styles.cardLeft}>
                         <WebsiteSVG />
                         <Text style={styles.cardTitle}>Developer Website</Text>
@@ -43,7 +43,7 @@ export default function SettingsScreen() {
                     <ArrowRightSVG />
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.card} onPress={() => { Linking.openURL('https://www.termsfeed.com/live/3ebfa683-48a8-4f39-960a-478055183dc6')}}>
+                <TouchableOpacity style={styles.card} onPress={() => { }}>
                     <View style={styles.cardLeft}>
                         <PolicySVG />
                         <Text style={styles.cardTitle}>Privacy Policy</Text>
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     card: {
         height: 68,
         backgroundColor: '#161616',
-        borderRadius: 12,
+        borderRadius: 14,
         paddingHorizontal: 16,
         alignItems: 'center',
         flexDirection: 'row',
